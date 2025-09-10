@@ -2,20 +2,32 @@
 
 
 
+header {
+    background-color: beige ;
+}
+
+
+ul {
+    display: flex;
+    position: relative;
+    
+
+}
+
+li {
+    margin: 5px;
+}
+
+
+
 * {
-    background-color: #fff9ea;
     font-family: "Poppins", sans-serif;
     padding: 0;
     margin: 0;
 
 }
 
-body {
 
-    background-image: url(".");
-    background-size: cover;
-    background-repeat: repeat;
-}
 
 .cardapio {
     display:flexbox;
