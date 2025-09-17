@@ -11,3 +11,10 @@
 body { background-image: url("../src_copy/images/mornig.jpg");
 }
 */
+ img {
+    width: 150px;
+ }
+
+ video {
+    width: 100% ;
+ }
