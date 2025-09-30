@@ -1,0 +1,242 @@
+
+
+body {
+    background-color: #F5F5DC;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 2px solid #800020;
+}
+
+header h1 {
+    color: #800020;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    color: #800020;
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+}
+
+/* Navegação */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #800020;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Conteúdo Principal e Seções */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #800020;
+    border-radius: 10px;
+}
+
+section h2 {
+    color: #800020;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Estilos Específicos das Seções */
+#sobre img.profile-pic {
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    border: 3px solid #00BFFF;
+    width: 200px;
+    height: 200px;
+}
+
+#sobre p, #projetos p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+#sobre p.quote {
+    text-align: center;
+    font-style: italic;
+    color: #CCCCCC;
+}
+
+#projetos img {
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 8px;
+    border: 2px solid #F5F5DC;
+}
+
+#competencias ul, #competencias ol {
+    margin-bottom: 25px;
+}
+
+#competencias li {
+    margin-bottom: 8px;
+    color: #CCCCCC;
+}
+
+#contacto p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#contacto strong {
+    color: #F5F5DC;
+}
+
+#contacto a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 2px solid #F5F5DC;
+    color: #CCCCCC;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+footer strong {
+    color: #F5F5DC;
+}
+
+
+.dish-image {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #F5F5DC;
+}
+
+
+#projetos {
+    padding: 60px 20px; /* Adiciona um bom espaçamento interno na seção */
+    text-align: center; /* Centraliza o título "Produtos" */
+    background-color: #800020; /* Fundo escuro como no seu portfólio original */
+    color: #FFFFFF;
+}
+
+.section-subtitle {
+    font-size: 2.8em;
+    color: #F5F5DC; /* A cor de destaque do seu portfólio */
+    margin-bottom: 50px; /* Espaço abaixo do título da seção */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contêiner dos Produtos (onde o Flexbox entra em ação) */
+.dish-grid-container {
+    display: flex; /* Ativa o Flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens na linha */
+    gap: 30px; /* Espaçamento entre os itens (linha e coluna) */
+    max-width: 1200px; /* Limita a largura máxima do grid de produtos */
+    margin: 0 auto; /* Centraliza o grid de produtos na página */
+}
+
+/* Estilo de cada item de produto (o antigo #dish, agora .dish-item) */
+.dish-item {
+    background-color: #2A2A2A; /* Cor de fundo para cada card de produto */
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+    padding: 25px;
+    text-align: center;
+    width: 280px; /* Largura fixa para cada card. Ajuste conforme preferir. */
+    display: flex; /* Faz o conteúdo dentro do card também usar flexbox */
+    flex-direction: column; /* Organiza os elementos internos em coluna */
+    justify-content: space-between; /* Distribui o espaço entre os elementos internos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para o hover */
+}
+
+.dish-item:hover {
+    transform: translateY(-8px); /* Levanta o card ligeiramente */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Sombra mais intensa no hover */
+}
+
+/* Estilo da Imagem do Produto */
+.dish-image {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível no card */
+    height: 220px; /* **Ajuste essa altura** conforme o que achar melhor para preencher o espaço. */
+                  /* Aumentei um pouco em relação ao exemplo anterior (180px) */
+    object-fit: cover; /* **ISSO É A SOLUÇÃO**: A imagem preenche o espaço definido por width/height, cortando as bordas extras (incluindo o transparente). */
+    object-position: center; /* Garante que o centro do produto fique visível, mesmo se houver corte. */
+
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+}
+
+/* Estilo do Título do Produto */
+.dish-title {
+    font-size: 1.6em;
+    color: #F5F5DC; /* Cor de destaque */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Estilo da Descrição do Produto */
+.dish-description {
+    font-size: 0.95em;
+    color: #F5F5DC;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz a descrição ocupar o máximo de espaço, empurrando o preço para baixo */
+}
+
+/* Estilo do Preço do Produto */
+.dish-price h4 {
+    font-size: 1.8em;
+    color: #FFFFFF; /* Preço em branco */
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
