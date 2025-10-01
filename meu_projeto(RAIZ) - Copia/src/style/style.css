@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*
+CORES: AZUL, BRANCO, PRETO
+*/
 
 body {
-    background-color: #F5F5DC;
-    color: #FFFFFF;
-    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Roboto", sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
@@ -12,33 +16,33 @@ body {
 /* Cabeçalho */
 header {
     text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-bottom: 2px solid #800020;
+    margin-bottom: 30px; /*margem parte de baixo*/
+    padding: 20px; /*espaçamento*/
+    border-bottom: 2px solid #800020; /*borda parte de baixo*/
 }
-
+/*CABEÇLHO H1*/
 header h1 {
-    color: #800020;
+    color: #0000FF;
     font-size: 2.5em;
     margin: 0;
 }
 
 header p {
-    color: #800020;
-    font-size: 1.2em;
+    color: #0000FF;
+    font-size: 1.2em; /*tamanho da fonte*/
     margin: 10px 0 0 0;
 }
 
 /* Navegação */
 nav {
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: center; /*centralizar texto*/
+    margin-bottom: 40px; /*margem em baixo*/
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /*nenhum estilo de lista*/
+    padding: 0; /*espaçamento*/
+    margin: 0; /*margem*/
 }
 
 nav li {
@@ -47,26 +51,26 @@ nav li {
 }
 
 nav a {
-    color: #800020;
-    text-decoration: none;
-    font-weight: bold;
+    color: #0000FF;
+    text-decoration: none; /*sem decoração no texto*/
+    font-weight: bold; /*força da fonte*/
 }
 
 /* Conteúdo Principal e Seções */
 main {
-    max-width: 1000px;
+    max-width: 1000px; /*latgura maxima*/
     margin: 0 auto;
 }
 
 section {
-    margin-bottom: 50px;
-    padding: 30px;
-    background-color: #800020;
-    border-radius: 10px;
+    margin-bottom: 50px; /*margem em baixo*/
+    padding: 30px; /*espaçamento*/
+    background-color: #0000FF; /*cor de fundo*/
+    border-radius: 10px; /*arredondamento*/
 }
 
 section h2 {
-    color: #800020;
+    color: #0000FF;
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
@@ -75,26 +79,27 @@ section h2 {
 section h3 {
     color: #FFFFFF;
     font-size: 1.5em;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 30px; /*margem topo*/
+    margin-bottom: 15px; /*margem em baixo*/
 }
 
 /* Estilos Específicos das Seções */
-#sobre img.profile-pic {
+#sobre img.logo {
     display: block;
     margin: 0 auto 20px auto;
-    border-radius: 50%;
-    border: 3px solid #00BFFF;
-    width: 200px;
-    height: 200px;
+    border-radius: 50%; /*borda da imagem*/
+    border: 3px solid #00BFFF; /*borda em volta da imagem da cor azul mais claro*/
+    width: 200px; /*largura da imagem*/
+    height: 200px; /*altura da imagem */
 }
 
+/*igualando as configuração de paragrafo para a aba projetos e sobre*/
 #sobre p, #projetos p {
     text-align: justify;
     margin-bottom: 15px;
 }
 
-#sobre p.quote {
+#sobre p.subtexto {
     text-align: center;
     font-style: italic;
     color: #CCCCCC;
@@ -106,7 +111,7 @@ section h3 {
     border-radius: 8px;
     border: 2px solid #F5F5DC;
 }
-
+/*
 #competencias ul, #competencias ol {
     margin-bottom: 25px;
 }
@@ -115,18 +120,18 @@ section h3 {
     margin-bottom: 8px;
     color: #CCCCCC;
 }
-
-#contacto p {
+*/
+#contato p {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.1em;
 }
 
-#contacto strong {
+#contato strong {
     color: #F5F5DC;
 }
 
-#contacto a {
+#contato a {
     color: #FFFFFF;
     text-decoration: underline;
 }
@@ -150,7 +155,7 @@ footer strong {
 }
 
 
-.dish-image {
+.produto-image {
     width: 80%;
     height: auto;
     border-radius: 8px;
@@ -160,8 +165,8 @@ footer strong {
 
 #projetos {
     padding: 60px 20px; /* Adiciona um bom espaçamento interno na seção */
-    text-align: center; /* Centraliza o título "Produtos" */
-    background-color: #800020; /* Fundo escuro como no seu portfólio original */
+    text-align: center; /* Centraliza o título "Catálogo" */
+    background-color: #0000FF; /* Fundo escuro como no seu portfólio original */
     color: #FFFFFF;
 }
 
@@ -169,74 +174,68 @@ footer strong {
     font-size: 2.8em;
     color: #F5F5DC; /* A cor de destaque do seu portfólio */
     margin-bottom: 50px; /* Espaço abaixo do título da seção */
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-transform: uppercase; /*texto em caixa alta*/
+    letter-spacing: 2px; /*espaço entre as letras*/
 }
 
-/* Contêiner dos Produtos (onde o Flexbox entra em ação) */
-.dish-grid-container {
+/* Contêiner do Catalogo  */
+.produto-container {
     display: flex; /* Ativa o Flexbox */
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
     justify-content: center; /* Centraliza os itens na linha */
     gap: 30px; /* Espaçamento entre os itens (linha e coluna) */
     max-width: 1200px; /* Limita a largura máxima do grid de produtos */
-    margin: 0 auto; /* Centraliza o grid de produtos na página */
+    margin: auto; /* Centraliza o grid de produtos na página */
 }
 
 /* Estilo de cada item de produto (o antigo #dish, agora .dish-item) */
-.dish-item {
-    background-color: #2A2A2A; /* Cor de fundo para cada card de produto */
+.produto-item {
+    background-color: #0000FF; /* Cor de fundo para cada card de produto */
     border-radius: 12px; /* Cantos mais arredondados */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
-    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra mais evidente */
+    padding: 25px; /*espaçamento*/
     text-align: center;
-    width: 280px; /* Largura fixa para cada card. Ajuste conforme preferir. */
-    display: flex; /* Faz o conteúdo dentro do card também usar flexbox */
+    width: 280px; /* Largura fixa para cada card. */
+    display: flex; /* Faz o conteúdo dentro do card contém flexbox */
     flex-direction: column; /* Organiza os elementos internos em coluna */
     justify-content: space-between; /* Distribui o espaço entre os elementos internos */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para o hover */
 }
 
-.dish-item:hover {
-    transform: translateY(-8px); /* Levanta o card ligeiramente */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Sombra mais intensa no hover */
-}
 
 /* Estilo da Imagem do Produto */
-.dish-image {
+.produto-image {
     width: 100%; /* Faz a imagem ocupar toda a largura disponível no card */
-    height: 220px; /* **Ajuste essa altura** conforme o que achar melhor para preencher o espaço. */
-                  /* Aumentei um pouco em relação ao exemplo anterior (180px) */
-    object-fit: cover; /* **ISSO É A SOLUÇÃO**: A imagem preenche o espaço definido por width/height, cortando as bordas extras (incluindo o transparente). */
+    height: 220px; /*altura imagem*/
+    object-fit: cover; /*  A imagem preenche o espaço definido por width/height */
     object-position: center; /* Garante que o centro do produto fique visível, mesmo se houver corte. */
 
     display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 8px;
+    margin: auto;
+    border-radius: 8px; /*arredondamento*/
 }
 
 /* Estilo do Título do Produto */
-.dish-title {
+.produto-title {
     font-size: 1.6em;
-    color: #F5F5DC; /* Cor de destaque */
-    margin-top: 15px;
-    margin-bottom: 10px;
+    color: #F5F5DC; /* Cor da fonte */
+    margin-top: 15px; /*espaço acima do texto*/
+    margin-bottom: 10px; /*espaço abaixo do texto*/
 }
 
 /* Estilo da Descrição do Produto */
-.dish-description {
+.produto-description {
     font-size: 0.95em;
     color: #F5F5DC;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    line-height: 1.5; /*altura da linha*/
+    margin-bottom: 20px; /*espaçamento em baixo do texto */
     flex-grow: 1; /* Faz a descrição ocupar o máximo de espaço, empurrando o preço para baixo */
 }
 
 /* Estilo do Preço do Produto */
-.dish-price h4 {
+.produto-price h4 {
     font-size: 1.8em;
     color: #FFFFFF; /* Preço em branco */
-    margin: 0;
+    margin: 0; /*0  de espaço*/
     font-weight: bold;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; /*espaço entre as letras*/
 }
