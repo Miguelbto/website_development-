@@ -3,6 +3,9 @@
 /*
 CORES: AZUL, BRANCO, PRETO
 */
+html {
+    scroll-behavior: smooth; /* Adiciona suavidade na rolagem da página */
+}
 
 body {
     background-color: #FFFFFF;
