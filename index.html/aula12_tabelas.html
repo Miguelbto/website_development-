@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/aula12_tabela.css">
+</head>
+<body>
+
+    <header>
+
+
+    </header>
+    
+
+    <main >
+
+        <table class="tabela-frutas">
+
+            <tr class="tabela-line">
+
+                <th colspan="2" class="tabela-header">Os preços das frutas hoje em dia </th>
+
+            </tr>
+
+            <tr>
+                <td colspan="2" class="tabela-conteudo">
+                    Banana R$350,00
+                </td>
+                
+            </tr>
+
+            <tr>
+
+                <td rowspan="2" class="tabela-conteudo">melancia </td>
+                <td colspan="2" class="tabela-conteudo">R$200</td>
+            </tr>
+
+
+        </table>
+
+        <form action="/">
+            <label for="nome-usuario">Nome:</label>
+            <input type="text" id="nome-usuario" required><br>
+
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email" required maxlength="50"><br>
+
+            <input type="checkbox" name="escolha-1" id="escolha-1" >
+            <label for="escolha-1" > I have a macrowave</label><br>
+            
+
+            <input type="checkbox" id="escolha-2" name="escolha-2">
+            <label for="escolha-2"> I have a car</label><br>
+            
+
+            <input type="radio" name="radio1" id="radio1">
+            <label for="radio1" > HTML</label><br>
+            
+            <input type="radio" id="radio2" name="radio2">
+            <label for="radio2"> CSS</label><br>
+            
+
+            <label for="date1"> Data:</label>
+            <input type="date" id="date1" name="date1"><br>
+
+            <label for="week1"> semana</label>
+            <input type="week" id="week1" name="week1"><br>
+
+            <label for="tel1"> telefone</label>
+            <input type="tel" id="tel1" name="tel1" pattern=" [0-9]{2} [0-9]{5}-[09]{4}" placeholder="(11) 00000-0000"><br>
+
+            <label for="file">insira seu arquivo aqui</label>
+            <input type="file" id="file" name="file">
+
+            <br>
+            <input type="submit" value="enviar"><br>
+
+            <button type="submit">Envie o formulário</button><br>
+
+            <fieldset>
+
+                <legend>adicione aqui seu comentário sobre esse formulário</legend>
+
+                <input type="text" id="comentario" name="comentario" minlength="10" maxlength="250">
+
+
+            </fieldset>
+
+            
+
+
+        </form>
+
+
+    </main>
+
+
+    <footer>
+
+    </footer>
+
+
+
+</body>
+</html>
+
