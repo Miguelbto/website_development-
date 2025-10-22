@@ -51,13 +51,25 @@ nav ul {
 nav li {
     display: inline-block;
     margin: 0 15px;
+    
 }
+
 
 nav a {
     color: #0000FF;
     text-decoration: none; /*sem decoração no texto*/
     font-weight: bold; /*força da fonte*/
+    display: inline-block; /*Garante que o transform funcione corretamente ao link*/
+    transition: all 0.3s ease-in-out; /*Faz a animação durar 0.3 segundos e ser suave*/
 }
+
+
+nav a:hover {
+    transform: translate(-2px); /*move 2px pra cima*/
+    color: #aa00ff; /*muda a cor para combinar com o botão*/
+}
+
+
 
 /* Conteúdo Principal e Seções */
 main {
@@ -241,4 +253,104 @@ footer strong {
     margin: 0; /*0  de espaço*/
     font-weight: bold;
     letter-spacing: 0.5px; /*espaço entre as letras*/
+}
+
+
+/* --- SEÇÃO: ESTILOS DO MODO ESCURO (DARK MODE) --- */
+/* ================================================= */
+
+/* * Este bloco SÓ é ativado quando o JavaScript adiciona a classe "dark-mode" 
+ * ao elemento <body>.
+ */
+body.dark-mode {
+    background-color: #2c2c2c; /* Define a cor de fundo principal da página para um cinza bem escuro. */
+    color: #f0f0f0;            /* Define a cor padrão do TEXTO da página para um cinza claro (quase branco). */
+}
+
+/* * Este seletor aplica estilos aos "blocos principais" da sua página
+ * (o cabeçalho, todas as seções e o rodapé) APENAS quando o dark-mode está ativo.
+ */
+body.dark-mode .header-title, 
+body.dark-mode section,
+body.dark-mode footer {
+    background-color: #3b3b3b; /* Deixa o fundo desses blocos com um cinza um pouco mais claro que o fundo da página, criando contraste. */
+    border-color: #555;        /* Se esses elementos tiverem bordas, elas se tornarão cinza escuro. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra mais escura para dar profundidade no tema escuro. */
+}
+
+/* * Estiliza os cards de produto individuais no modo escuro.
+ */
+body.dark-mode .produto-item {
+    background-color: #4a4a4a; /* Define um outro tom de cinza para os cards, para que eles se destaquem da seção. */
+}
+
+/* * Estiliza todos os seus títulos (h1, h2, h3) no modo escuro.
+ */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #FFFFFF; /* Força a cor dos títulos para branco puro, garantindo legibilidade. */
+}
+
+/* * Estiliza todos os links <a> no modo escuro.
+ */
+body.dark-mode a {
+    color: #61dafb; /* Define a cor dos links para um azul claro e vibrante, que contrasta bem com o fundo escuro. */
+}
+
+/* * Estiliza o que acontece quando você passa o mouse sobre um link (hover) no modo escuro.
+ */
+body.dark-mode a:hover {
+    color: white; /* Muda a cor do link para branco puro ao passar o mouse. */
+}
+
+
+/* ======================================= */
+/* --- SEÇÃO: ESTILO DO BOTÃO DE TEMA --- */
+/* ======================================= */
+
+/* * Este é o estilo base do botão (ID #btn-tema).
+ * Ele se aplica o tempo todo (no modo claro E no escuro).
+ */
+#btn-tema {
+    border-radius: 50px;       /* Deixa as bordas totalmente redondas (forma de "pílula"). */
+    background-color: #000000; /* Cor de fundo padrão do botão: preto. */
+    color: #FFFFFF;            /* Cor do texto do botão: branco. */
+    text-transform: uppercase; /* Força o texto do botão a ficar em MAIÚSCULAS. */
+    letter-spacing: 1px;       /* Adiciona um pequeno espaçamento entre as letras. */
+    font-weight: bold;          /* Define o "peso" da fonte (400 = normal). */
+    margin-top: 10px;          /* Adiciona uma margem de 10px acima do botão. */
+    
+    /* * A MÁGICA DA ANIMAÇÃO:
+     * "all" = anime TODAS as propriedades que mudarem (background, box-shadow, transform).
+     * "0.3s" = a animação deve durar 0.3 segundos.
+     * "ease-in-out" = um efeito de aceleração e desaceleração suave.
+     * É ISSO que remove a animação "seca"!
+     */
+    transition: all 0.3s ease-in-out; 
+}
+
+/* * Estilo aplicado quando o mouse passa POR CIMA do botão (:hover).
+ */
+#btn-tema:hover {
+    /* Muda o fundo de preto sólido para um gradiente roxo/magenta vibrante. */
+    background: linear-gradient(45deg, #aa00ff, #6a00ff);
+    
+    /* Adiciona uma sombra para dar um efeito de "elevação". */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    
+    /* Move o botão 2 pixels para CIMA (eixo Y negativo). */
+    transform: translateY(-2px);
+}
+
+/* * Estilo aplicado NO MOMENTO EXATO em que o botão é CLICADO (:active).
+ */
+#btn-tema:active {
+    /* * translateY(0) = move o botão de volta para baixo (remove o efeito de flutuar).
+     * scale(0.95) = diminui o tamanho do botão para 95%, dando o efeito de "pressionar".
+     */
+    transform: translateY(0) scale(0.95);
+    
+    /* Diminui a sombra, já que o botão está "pressionado". */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
