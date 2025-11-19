@@ -1,0 +1,240 @@
+/* --- RESET E ESTILOS GERAIS --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  padding-bottom: 100px;
+}
+h1 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+}
+h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1.2rem;
+}
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+section {
+  margin-bottom: 40px;
+}
+
+/* --- ESTILOS VISUAIS BASE --- */
+
+/* Base Flexbox (Azul) */
+.flex-container {
+  border: 3px solid #3498db;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 15px;
+  /* Altura fixa para visualizar alinhamentos verticais */
+  height: 150px;
+}
+.item {
+  background-color: #3498db;
+  color: white;
+  border: 1px solid white;
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#flex-basico {
+display: flex; /* Ativa o Flexbox */
+}
+
+#flex-direction {
+    display: flex;
+    flex-direction: column; /*muda o eixo principal para vertical*/
+    height: auto;
+}
+
+/* 1.3. Justify Content (Eixo Principal - Horizontal aqui) */
+#flex-justify {
+display: flex;
+justify-content: space-between; /* Espalha os itens */
+}
+
+
+/* 1.4. Align Items (Eixo Cruzado - Vertical aqui) */
+#flex-align {
+display: flex;
+align-items: center; /* Centraliza na altura do container */
+}
+
+/* 1.5. Centralização Total (O Santo Graal) */
+#flex-center {
+display: flex;
+justify-content: center; /* Centro Horizontal */
+align-items: center; /* Centro Vertical */
+}
+
+/* 1.6. Wrap (Quebra de Linha) */
+#flex-wrap {
+display: flex;
+flex-wrap: wrap; /* Permite quebrar linha */
+height: auto; /* Altura automática para caber as
+linhas */
+}
+
+
+/* Ajuste nos itens do wrap para
+caberem e testar a quebra */
+#flex-wrap .item {
+width: 150px;
+margin: 5px;
+}
+
+/* 1.7. Grow (Crescimento) */
+#flex-grow {
+display: flex;
+}
+#flex-grow .item {
+flex-grow: 1; /* Todos crescem igualmente para preencher o espaço */
+}
+
+
+/* Base Grid (Verde) */
+.grid-container {
+  border: 3px solid #2ecc71;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: grid; /* Grid já ativo para todos os exemplos de grid */
+  gap: 10px;
+}
+.item-grid {
+  background-color: #2ecc71;
+  color: white;
+  border: 1px solid white;
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#grid-basico {
+display: grid;
+/* Cria 3 colunas de tamanhos iguais (1 fração cada) */
+grid-template-columns: 1fr 1fr 1fr;
+
+/* Cria 2 colunas: a 1a é o dobro da 2a */
+/* grid-template-columns: 2fr 1fr; */
+}
+
+.grid-container {
+border: 3px solid #2ecc71;
+background-color: #fff;
+padding: 10px;
+margin-bottom: 15px;
+display: grid; /* Grid já ativo para todos os exemplos de grid */
+gap: 10px;
+}
+
+#item-header {
+/* Começa na linha 1, vai até a linha 4 (ocupa tudo) */
+grid-column: 1 / 4;
+background-color: #27ae60; /* Cor diferente para destacar */
+}
+
+#grid-misto {
+display: grid;
+/* Coluna 1: 200px fixos (ex: Sidebar fixa)
+Coluna 2: auto (Tamanho do conteúdo
+mais largo)
+Coluna 3: 1fr (Ocupa todo o resto do
+espaço)
+*/
+grid-template-columns: 200px auto 1fr;
+gap: 10px;
+}
+
+#grid-repeat {
+display: grid;
+/* Cria 4 colunas iguais de 1fr */
+grid-template-columns: repeat(4, 1fr);
+
+/* Podemos misturar! */
+/* 1 coluna de 100px, depois 3 colunas de 1fr */
+/* grid-template-columns: 100px repeat(3, 1fr); */
+}
+
+#grid-minmax {
+display: grid;
+/* As colunas terão no mínimo 150px.
+Se houver espaço sobrando, elas crescem (1fr).
+Se não houver, elas param em 150px (gera scroll horizontal ou quebra).
+*/
+grid-template-columns: repeat(3, minmax(150px, 1fr));
+}
+
+#grid-minmax {
+display: grid;
+/* As colunas terão no mínimo 150px.
+Se houver espaço sobrando, elas crescem (1fr).
+Se não houver, elas param em 150px (gera scroll horizontal ou quebra).
+*/
+grid-template-columns: repeat(3, minmax(150px, 1fr));
+}/* No container #grid-posicao */
+#item-header {
+/* Começa na linha 1 e estende por 3 colunas */
+grid-column: 1 / span 3;
+/* É o mesmo que grid-column: 1 / 4; */
+}
+
+#-item-sidebar{
+/* Começa onde estiver (auto) e estende por 2 linhas
+verticais */
+grid-row: span 2;
+}
+
+#item-footer {
+/* Começa na primeira linha e vai até a ÚLTIMA (-1) */
+grid-column: 1 / -1;
+background-color: #e74c3c; /* Destaque */
+}
+
+#grid-areas {
+grid-template-columns: 1fr 3fr;
+grid-template-areas:
+/* Mapa do layout */
+"header header"
+"aside main"
+"footer footer";
+gap: 10px;
+}
+
+/* Conectando os itens aos nomes do mapa */
+#header { grid-area: cabeçalho; }
+#aside { grid-area: lateral; }
+#main { grid-area: principal; }
+#footer { grid-area: rodape; }
+
+
+
+
+
+
+
+
+
+
+
+
