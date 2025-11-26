@@ -1,0 +1,77 @@
+/* =========================================
+   ESTRUTURA BASE (IGUAL À VERSÃO ANTERIOR)
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: sans-serif; background-color: #e9ecef;
+    display: grid; min-height: 100vh;
+    /* Mantemos a estrutura fixa do layout principal por enquanto */
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "aside  main"
+        "footer footer";
+    gap: 15px;
+}
+
+.header { grid-area: header; background-color: #343a40; color: white; padding: 15px; }
+.sidebar { grid-area: aside; background-color: #fff; padding: 20px; align-self: start; }
+.content { grid-area: main; background-color: #fff; padding: 20px; }
+.footer { grid-area: footer; background-color: #343a40; color: #adb5bd; padding: 20px; }
+
+ul { list-style: none; } a { text-decoration: none; }
+
+/* =========================================
+   MENU FLEXBOX (MANDEI O MENU CORRIGIDO)
+   ========================================= */
+.header {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+}
+.menu {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    justify-content: center; /* Centraliza se quebrar */
+}
+.menu a {
+    color: #dee2e6; font-weight: bold; white-space: nowrap;
+    display: block; padding: 10px 15px;
+    background-color: rgba(255,255,255,0.1); border-radius: 4px;
+}
+.menu a:hover { background-color: rgba(255,255,255,0.2); }
+.destaque-contato { order: -1; }
+.destaque-contato a { background-color: #e67e22; color: white; }
+
+/* =========================================
+   PASSO 5: GRID CARDS RESPONSIVOS (A SOLUÇÃO)
+   ========================================= */
+.grid-cards {
+    display: grid;
+    gap: 15px; margin-top: 20px;
+
+    /* A MÁGICA ACONTECE AQUI:
+       - auto-fit: Tenta encaixar o máximo de colunas possível.
+       - minmax(200px, 1fr): Cada coluna tem no MÍNIMO 200px.
+         Se sobrar espaço, elas crescem (1fr). Se faltar, quebram linha. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+    background-color: #007bff; color: white; padding: 20px;
+    border-radius: 8px; font-weight: bold; font-size: 1.2rem;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 120px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 15px;
+}
+.btn-topo {
+    background-color: #495057; color: white; padding: 8px 15px;
+    border-radius: 20px; cursor: pointer; align-self: start;
+}
