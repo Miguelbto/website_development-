@@ -1,0 +1,285 @@
+/* --- RESET E ESTILOS GERAIS --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  padding-bottom: 100px;
+}
+h1 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+}
+h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1.2rem;
+}
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+section {
+  margin-bottom: 40px;
+}
+
+/* --- VISUAL BASE --- */
+.flex-container,
+.grid-container {
+  border: 3px solid #333;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.flex-container {
+  border-color: #3498db;
+} /* Azul para Flex */
+.grid-container {
+  border-color: #2ecc71;
+} /* Verde para Grid */
+
+.item,
+.item-grid {
+  color: white;
+  border: 1px solid white;
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item {
+  background-color: #3498db;
+}
+.item-grid {
+  background-color: #2ecc71;
+}
+
+/* ================= FLEXBOX ================= */
+#flex-basico {
+  display: flex;
+}
+#flex-direction {
+  display: flex;
+  flex-direction: column;
+}
+#flex-justify {
+  display: flex;
+  justify-content: space-between;
+}
+#flex-align {
+  display: flex;
+  height: 150px;
+  align-items: center;
+}
+#flex-center {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+#flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+#flex-wrap .item {
+  width: 150px;
+  margin: 5px;
+}
+#flex-grow {
+  display: flex;
+}
+#flex-grow .item {
+  flex-grow: 1;
+}
+
+/* 1.8. Order */
+#flex-order {
+  display: flex;
+}
+#flex-order .item-invertido {
+  order: -1;
+  background-color: #e74c3c;
+}
+
+/* 1.9. Align-Self */
+#flex-align-self {
+  display: flex;
+  height: 150px;
+  align-items: flex-start;
+}
+#flex-align-self .item-diferente {
+  align-self: flex-end;
+  background-color: #e74c3c;
+}
+
+/* ================= CSS GRID ================= */
+/* 2.1 a 2.4 Básicos */
+#grid-basico {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+#grid-misto {
+  display: grid;
+  grid-template-columns: 200px auto 1fr;
+  gap: 10px;
+}
+#grid-repeat {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+#grid-minmax {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 2fr));
+  gap: 10px;
+}
+
+/* 2.5. Grade Implícita */
+#grid-implicit-row {
+  display: grid;
+  /* Definimos EXPLICITAMENTE 2 colunas e 2 linhas fixas */
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+
+  /* --- Configuração da Grade Implícita --- */
+  /* O padrão já é 'row', então o item 5 vai criar uma nova LINHA. */
+  /* grid-auto-flow: row; (não precisa escrever, é o padrão) */
+
+  /* Definimos que essa nova linha automática terá 50px de altura */
+  grid-auto-rows: 50px;
+}
+
+.item-extra {
+    background-color: #e74c3c; /* Cor diferente para destacar */
+}
+
+#grid-implicit-column {
+  display: grid;
+  /* Definimos EXPLICITAMENTE 2 colunas e 2 linhas fixas */
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+
+  /* --- Configuração da Grade Implícita --- */
+  /* MUDANÇA: Se faltar espaço, crie uma nova COLUNA à direita */
+  grid-auto-flow: column;
+
+  /* Definimos que essa nova coluna automática terá 80px de largura */
+  grid-auto-columns: 80px;
+}
+
+
+
+/* 2.6 e 2.7 Alinhamentos */
+#grid-alignment-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 200px;
+  justify-items: center;
+  align-items: center;
+}
+#grid-alignment-content {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  gap: 5px;
+  height: 300px;
+  justify-content: center;
+  align-content: center;
+}
+
+/* --- POSICIONAMENTOS SEPARADOS --- */
+
+/* 2.8. Posicionamento por Linhas (Start/End) */
+#grid-linhas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.item-linha-especifica {
+  grid-column: 1 / 4; /* Da linha 1 até a 3 */
+  background-color: #e74c3c;
+}
+
+/* 2.9. Posicionamento com Span */
+#grid-span {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+.item-span {
+  grid-column: span 2; /* Ocupa 2 espaços */
+  background-color: #9b59b6;
+}
+.item-span-row {
+  grid-row: span 2; /* Ocupa 2 linhas verticais */
+  background-color: #8e44ad;
+}
+
+/* 2.10. Linhas Negativas */
+#grid-negativo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.item-negativo {
+  grid-column: 1 / -1; /* Do começo até o fim absoluto */
+  background-color: #34495e;
+}
+
+/* 2.11. Alinhamento Individual */
+#grid-item-alignment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3,1fr);
+  height: 200px;
+  gap: 10px;
+  justify-items: start;
+}
+.item-diferente {
+  justify-self: end;
+  align-self: end;
+  background-color: #d35400;
+}
+
+/* 2.12. Template Areas */
+#grid-areas {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+  height: 300px;
+  grid-template-areas: 
+  "header header" 
+  "aside main" 
+  "footer footer";
+}
+.area-header {
+  grid-area: header;
+  background-color: #d35400;
+}
+.area-main {
+  grid-area: main;
+  background-color: #f39c12;
+  color: #333;
+}
+.area-aside {
+  grid-area: aside;
+  background-color: #e67e22;
+}
+.area-footer {
+  grid-area: footer;
+  background-color: #d35400;
+}

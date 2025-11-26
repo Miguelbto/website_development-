@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr;
+    gap: 10px;
+    min-height: 100vh;
+    grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+}
+
+.area-header {
+    grid-area: header;
+    background-color: aquamarine;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+
+.menu li a {
+    background-color: blue;
+    padding: 5px;
+    white-space: nowrap;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+}    
+
+.destaque-contato {
+    order: -1;
+    background-color: green;
+}
+
+.sidebar {
+    grid-area: aside;
+    background-color: blueviolet;
+    padding: 3px;
+    align-self: flex-start;
+}
+
+.content {
+    grid-area: main;
+    background-color:yellow;
+    padding: 4px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color:brown;
+    padding: 5;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.btn-topo {
+    align-self: flex-start;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    background-color: steelblue;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
