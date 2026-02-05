@@ -33,6 +33,7 @@
     border-radius: 8px;
     padding: 15px;
     transition: 0.3s; /* Para o feedback ser suave */
+    line-height: 1.6;
 }
 
 /* EXERCÍCIO 4 - FEEDBACK NO CARD */
@@ -59,4 +60,15 @@
 .card-noticia p {
     color: #666; /* Texto secundário */
     font-size: 14px;
+}
+
+.link-nav:focus{
+    outline: 3px solid #666;
+    
+}
+
+
+.card-noticia:focus {
+    outline: 13px solid #1b5e20;
+    background-color: blue;
 }
