@@ -7,8 +7,8 @@
 }
 
 /* ERRO: Escondendo o foco */
-*:focus {
-  outline: none;
+button:focus {
+  outline: 5px #e67e22;
 }
 
 .header {
@@ -50,7 +50,7 @@ input:checked + label {
 
 /* Sistema de exibição das telas */
 .aba-tela {
-  display: none;
+  display: grid;
 }
 #massa:checked ~ #tela-massas {
   display: grid;
