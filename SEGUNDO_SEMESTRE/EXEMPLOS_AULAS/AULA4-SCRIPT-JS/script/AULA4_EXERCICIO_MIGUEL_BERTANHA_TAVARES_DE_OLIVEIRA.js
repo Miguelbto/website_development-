@@ -1,3 +1,4 @@
+/*
 class Conta {
     constructor(qntPessoas, vlrTotal){
         this.qntPessoas = qntPessoas
@@ -41,7 +42,9 @@ if(querAlgo){
 
 let valorCompra = parseFloat(prompt("Digite o valor da compra:"));
 
-let temCupom = prompt("Você tem cupom de desconto? (Digite 'sim' ou 'nao')");
+let cupom = confirm("Você tem cupom de desconto? (clique 'ok' ou 'cancelar')")
+
+let temCupom = prompt("Você tem cupom de desconto? (Digite 'sim' ou 'nao')").toLocaleLowerCase().trim();
 
 if (valorCompra > 150 || temCupom === "sim") {
     console.log("Frete Grátis Liberado");
@@ -49,15 +52,15 @@ if (valorCompra > 150 || temCupom === "sim") {
     console.log("Frete Pago");
 }
 
-let palpiteusuario = parseInt(prompt("Escolha um número de 1 a 10:"))
+let palpiteusuario = parseInt(prompt("Escolha um número de 1 a 10:")) //transforma string em numero
 
-let numeroSorteado = Math.floor(Math.random() * 10) + 1
+let numeroSorteado = Math.floor(Math.random() * 10) + 1 //escolhe um número aleatório entre 0.0 e 0.9999, e arredonda para o numero inteiro mais baixo, e depois transforma em numero inteiro começando a contar do 1
 
 if (palpiteusuario === numeroSorteado) {
     alert("Parabéns, você acertou o número")
 } else {
     alert(`Infelizmente você  errou, o número sorteado foi ${numeroSorteado}`)
-}
+}*/
 
 class Veiculo {
     constructor(modelo, marca, ano){
@@ -74,3 +77,11 @@ class Veiculo {
 }
 
 const veiculo1 = new Veiculo("corolla", "toyota", 2020)
+
+let modelo = prompt(`me informe o modelo do seu carro`)
+let marca = prompt(`me informe o marca do seu carro`)
+let ano = parseInt(prompt(`me informe o ano do seu carro`))
+
+let carro2 = new Veiculo(modelo, marca, ano) 
+
+let idadecarro = alert(`seu carro tem ${carro2.idadeVeiculo(2026)}`)
