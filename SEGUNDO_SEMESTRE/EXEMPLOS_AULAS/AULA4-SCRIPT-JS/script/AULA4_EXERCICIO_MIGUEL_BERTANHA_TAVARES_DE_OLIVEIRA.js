@@ -1,8 +1,3 @@
-
-
-
-
-
 class Conta {
     constructor(qntPessoas, vlrTotal){
         this.qntPessoas = qntPessoas
