@@ -19,9 +19,6 @@ statusChange.classList.add("online")
 statusChange.textContent = 'Online'
 
 /* AUDITORIA */
-
-
-
 console.log(`O número de skills do usuário é de:${contar.length}`)
 
 
