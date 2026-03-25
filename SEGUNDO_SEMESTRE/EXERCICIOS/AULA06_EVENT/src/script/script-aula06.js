@@ -53,6 +53,7 @@ if (btnReset) {
     previewTexto.textContent = "Digitando: ...";
   };
 
+
   // Escuta o clique no botão
   btnReset.addEventListener("click", limparTudo);
 
