@@ -34,9 +34,9 @@ function toggleBadgeStatus() {
     badgeElement.textContent = isNovoStatusOnline ? UI_CONFIG.messages.active : UI_CONFIG.messages.inactive
 }
 
-//==========================
-// INICIALIZAÇÃO           =
-//==========================
+
+// INICIALIZAÇÃO           
+
 
 function initBadgeFeature(){
     const btnToggle = document.querySelector(UI_CONFIG.selectors.btnToggle)

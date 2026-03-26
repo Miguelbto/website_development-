@@ -17,9 +17,8 @@ function warnMissingElement (element){
     console.warn(`[Sistema] O elemento '${element}' não foi encontrado.`)
 }
 
-// ==========================================
+
 // 1. FUNCIONALIDADE: CURTIR
-// ==========================================
 function initCurtir (){
     const curtirElement = document.querySelector(UI_config.selector.btnCurtir)
     const contadorCurtida = document.querySelector(UI_config.selector.contador)
@@ -35,9 +34,8 @@ function initCurtir (){
 }
 initCurtir()
 
-// ==========================================
+
 // 2. FUNCIONALIDADE: CAMPO DE TEXTO
-// ==========================================
 function textCamp(event){
     const previewText = document.querySelector(UI_config.selector.previewTexto)
     if (!previewText) return; // Defesa rápida
@@ -84,7 +82,7 @@ initColorBox()
 // 4. FUNCIONALIDADE: LIMPAR TUDO
 function clearAll() {
     const contadorLook = document.querySelector(UI_config.selector.contador)
-    const inputTexto = document.querySelector(UI_config.selector.campoTexto) // Nome alterado para evitar conflito!
+    const inputTexto = document.querySelector(UI_config.selector.campoTexto) 
     const previewText = document.querySelector(UI_config.selector.previewTexto)
 
     Contador.cliquesCurtidas = 0
