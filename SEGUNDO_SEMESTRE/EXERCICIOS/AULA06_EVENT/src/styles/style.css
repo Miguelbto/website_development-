@@ -44,3 +44,8 @@ input {
   border-radius: 8px;
   cursor: crosshair;
 }
+
+.caixa-destaque {
+  background-color: blue !important;
+  color: white !important;
+}
