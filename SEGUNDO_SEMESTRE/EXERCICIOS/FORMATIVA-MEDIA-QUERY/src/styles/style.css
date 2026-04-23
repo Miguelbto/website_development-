@@ -1,0 +1,121 @@
+/* =========================================
+   ESTILOS GLOBAIS (DESKTOP FIRST)
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+}
+
+header {
+  background-color: #1f2833;
+  padding: 25px;
+  border-bottom: 3px solid #66fcf1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  color: #66fcf1;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.painel {
+  background: #1f2833;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.painel h2 {
+  color: #45a29e;
+  margin-bottom: 15px;
+}
+
+.dica-desktop {
+  background-color: #c5c6c7;
+  color: #0b0c10;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.img-produto {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Grid Principal (3 colunas no Desktop) */
+.grid-pacotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card-pacote {
+  background-color: #1f2833;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #45a29e;
+  text-align: center;
+}
+.card-pacote h3 {
+  color: #66fcf1;
+  margin-bottom: 10px;
+}
+.card-pacote strong {
+  display: block;
+  margin-top: 15px;
+  color: #45a29e;
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   MISSÕES DE RESPONSIVIDADE (MEDIA QUERIES)
+   ALUNO, CRIE SUAS REGRAS ABAIXO:
+   ========================================= */
+
+/* Missão 1 e 2: Ponto de quebra para TABLETS (Largura máxima de 768px) */
+/* Dica M2: Capture a .grid-pacotes e altere as colunas do template para repetir apenas 2 vezes (1fr) */
+
+/* Missão 3, 4 e 5: Ponto de quebra para SMARTPHONES (Largura máxima de 480px) */
+/* Dica M4: Capture a .grid-pacotes e mude para 1 coluna (1fr). Capture o header, mude a direção do flex para coluna e centralize (text-align) */
+/* Dica M5: Capture a .dica-desktop e faça ela desaparecer da tela usando a propriedade de exibição apropriada! */
+
+
+
+@media (max-width: 768px) {
+  .grid-pacotes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 480px) {
+  .grid-pacotes {
+    grid-template-columns: 1fr;
+  }
+  
+  
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px; 
+  }
+
+  
+  .dica-desktop {
+    display: none;
+  }
+}
