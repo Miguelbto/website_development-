@@ -30,10 +30,17 @@ function renderizarPedidos(){
     lista.innerHTML = ""
     let total = 0
 
+    pedidos.forEach(function(pedido, indice){
+
+        const li = document.createElement("li")
+        li.classList.add("item-pedido")
+
 
     // INFORMAÇÕES TEXTO
     const textoSpan = document.createElement("span")
-    textoSpan.textContent = quantidade + "X " + nomePrato + " - " + precoExibido
+    textoSpan.innerHTML = "<strong>" + pedido.nome + "<strong>" + "-" + pedido.qtd + "X" + "R$" + pedido.preco.toFixed(2).replace(".", ",") + "= <span class= 'subtotal-item'> R$" + pedido.subtotal.toFixed(2).replace(".", ",")
+
+    
 
     // CRIANDO BOTÃO PARA REMOVER PRATO
     const btnRemover = document.createElement("button")
@@ -42,17 +49,40 @@ function renderizarPedidos(){
     btnRemover.classList.add("btn-remover")
 
     btnRemover.addEventListener("click", () => {
-        itemli.remove()
         
-        const badge = card.querySelector(".badge-adicionado")
-        if(badge) badge.remove()
+        const lista = JSON.parse(localStorage.getItem("techfood_pedidos") || "[]")
 
-        if (listaResumo.children.length === 0){
-            secaoResumo.style.display = "none";
-        }
+        lista.splice(indice, 1)
+
+        localStorage.setItem("techfood_pedidos")
+        renderizarPedidos()
+        
     })
 
-    itemli.appendChild(textoSpan);
-    itemli.appendChild(btnRemover);
-    listaResumo.appendChild(itemli);
+    li.appendChild(textoSpan);
+    li.appendChild(btnRemover);
+    lista.appendChild(li);
+    total += pedido.subtotal
+
+    });
+
+    const totalFmt = "R$" + total.toFixed(2).replace(".", ",")
+    
+
+
+
+
+    
+}
+
+
+function configurarLimparPedidos () {
+    const btn = document.querySelector("#btn-limpar-pedidos")
+
+    if (!btn) return
+
+    btn.addEventListener("click", function () {
+        localStorage.removeItem("techfood_pedidos")
+        renderizarPedidos()
+    })
 }
