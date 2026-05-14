@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
-
+    renderizarPedidos()
+    configurarLimparPedidos()
 })
 
 
@@ -54,7 +55,7 @@ function renderizarPedidos(){
 
         lista.splice(indice, 1)
 
-        localStorage.setItem("techfood_pedidos")
+        localStorage.setItem("techfood_pedidos", JSON.stringify(lista))
         renderizarPedidos()
         
     })
@@ -67,12 +68,17 @@ function renderizarPedidos(){
     });
 
     const totalFmt = "R$" + total.toFixed(2).replace(".", ",")
-    
+    if (spanTotal) spanTotal.textContent = totalFmt
+    if (spanResumo) spanResumo.textContent = totalFmt
 
+    //reduce acumula as quantidades- devolve o total de itens
+    const totalItens = pedidos.reduce(function (acc, p) {
+        return acc + p.qtd
+    }, 0)
+    if(spanContador) {
+        spanContador.textContent = totalItens + (totalItens === 1 ? "item" : "itens")
+    }
 
-
-
-    
 }
 
 
