@@ -226,7 +226,7 @@ function salvarPedido(produtoId, quantidade, botao) {
   localStorage.setItem("techfood_pedidos", JSON.stringify(lista));
 
   // Feedback visual — igual Aula 8
-  botao.textContent           = "✓ Adicionado!";
+  botao.textContent           = "✓ Adicionado!";  
   botao.style.backgroundColor = "#27ae60";
 
   atualizarContadorPedidos();
