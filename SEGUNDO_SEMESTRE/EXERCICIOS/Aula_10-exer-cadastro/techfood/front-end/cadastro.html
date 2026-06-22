@@ -52,12 +52,14 @@
             <div id="label-agrupar">
                 <label for="produto-nome">Nome do Produto</label>
                 <input type="text" id="produto-nome" name="nome" placeholder="Lasanha a Bolonhesa">
+                <span class="mensagem-erro" id="erro-nome"></span>
             </div>
 
             <div class="form-linha">
                 <div id="label-agrupar">
                     <label for="produto-preco">Preço(R$)</label>
                     <input type="number" id="produto-preco" name="preco" placeholder="0,00">
+                    <span class="mensagem-erro" id="erro-preco"></span>
                 </div>
             </div>
 
@@ -69,6 +71,7 @@
             <div id="label-agrupar">
                 <label for="produto-image">Inserir imagem</label>
                 <input type="file" id="produto-image" name="imagem" />
+                <span class="mensagem-erro" id="erro-imagem"></span>
             
 
                 <div id="imagemPreviewBox" class="oculta">

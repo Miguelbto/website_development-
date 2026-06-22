@@ -340,3 +340,19 @@ input[type="file"] {
     border-bottom: none;
   }
 }
+
+
+/* Estilo do texto de erro */
+.mensagem-erro {
+    color: #e74c3c; /* Vermelho padrão de erro */
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-weight: bold;
+    display: none; /* Começa escondido */
+}
+
+/* Classe aplicada ao input via JavaScript quando há erro */
+.input-erro {
+    border-color: #e74c3c !important;
+    background-color: #fdf2f2 !important; /* Um fundo levemente avermelhado */
+}

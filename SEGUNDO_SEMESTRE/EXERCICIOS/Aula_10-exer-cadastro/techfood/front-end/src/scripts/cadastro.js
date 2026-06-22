@@ -37,21 +37,17 @@ inputImagem.addEventListener('change', () => {
 form.addEventListener('submit', async (event) => {
     event.preventDefault(); 
 
+    limparErrosFormulario()
+    let temErro = false
+
     // Validação da imagem isolada
     if (!inputImagem.files[0]) {
-        alert('Por favor, selecione uma foto para o produto.');
+        mostrarErro('produto-image', 'erro-imagem', 'Por favor, selecione uma foto.')
+        temErro = true
         return;
     }
 
-    try {
-        // Bloqueio de Segurança contra Duplo Clique
-        btnSubmit.disabled = true;
-        btnSubmit.innerHTML = 'Cadastrando... ⏳';
-
-        // MUDANÇA: Passando o 'form' diretamente, o JS captura automaticamente 
-        // TODOS os inputs que possuem o atributo 'name' no HTML. 
-        // Exemplo no HTML: <input type="text" name="nome" id="produto-nome">
-        const formData = new FormData(form);
+    const formData = new FormData(form);
 
         // MUDANÇA INTELIGENTE: Varre todos os dados capturados.
         // Se o dado for um texto (string), ele aplica o .trim() para remover espaços.
@@ -62,11 +58,32 @@ form.addEventListener('submit', async (event) => {
             }
         }
 
-        // Validação genérica: garante que nenhum texto ficou vazio após o trim
-        if (!formData.get('nome') || !formData.get('preco') || !formData.get('descricao')) {
-            alert('Por favor, preencha todos os campos obrigatórios.');
-            return; // Interrompe a execução antes de chamar a API
+        if (!formData.get('nome')) {
+            mostrarErro('produto-nome', 'erro-nome', 'O nome do produto é obrigatório.')
+            temErro = true
         }
+
+        const precoBruto = formData.get('preco')
+        const precoNormalizado = precoBruto ? preco.replace(',','.') : ''
+        formData.set('preco', precoNormalizado)
+
+        const precoNumerico = Number(precoNormalizado)
+        if (!precoNumerico || precoNumerico <= 0) {
+            mostrarErro('produto-preco', 'erro-preco', 'Digite um preço válido maior que zero.')
+            temErro = true
+        }
+
+        if (!formData.get('descricao')) {
+            mostrarErro('produto-descricao', 'erro-descricao', 'A descrição é obrigatória')
+            temErro = true
+        }
+
+        if (temErro) return 
+
+    try {
+        // Bloqueio de Segurança contra Duplo Clique
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = 'Cadastrando... ⏳';
 
         // Consome a função assíncrona (api.js) enviando o formData automatizado
         const respostaServidor = await cadastrarProduto(formData);
@@ -100,16 +117,40 @@ function exibirCardSucesso(resposta, dadosEnviados) {
     feedbackSection.classList.remove('oculto');
     
     // MUDANÇA: Agora pegamos o valor direto do formData, que já passou pelo .trim()
-    const precoFormatado = parseFloat(dadosEnviados.get('preco')).replace(',','.')
+    const precoFormatado = Number(dadosEnviados.get('preco')).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
 
     // MUDANÇA: HTML mais limpo. Recomendo criar as classes 'card-sucesso' e 'texto-sucesso' no seu arquivo CSS.
-    produtoOut.innerHTML = `
-        <div class="card-sucesso">
-            <p class="texto-sucesso"><strong>✔️ ${resposta.mensagem || 'Produto salvo com sucesso!'}</strong></p>
-            <p><strong>Item:</strong> ${dadosEnviados.get('nome')}</p>
-            <p><strong>Valor cadastrado:</strong> ${precoFormatado}</p>
-        </div>
-    `;
+   produtoOut.textContent = ''
+
+   const cardSucesso = document.createElement('div')
+   cardSucesso.classList.add('card-sucesso')
+
+   const pMensagem = document.createElement('p')
+   pMensagem.classList.add('texto-sucesso')
+   pMensagem.innerHTML = `<strong>✔️ ${resposta.mensagem || 'Produto salvo com sucesso!'}</strong>`; 
+    // (Podemos usar innerHTML aqui porque a 'resposta.mensagem' vem do NOSSO servidor, não do input do usuário)
+
+    // 4. Cria o parágrafo do Nome do Produto (AQUI ESTÁ A SEGURANÇA)
+    const pNome = document.createElement('p');
+    const strongNome = document.createElement('strong');
+    strongNome.textContent = 'Item: '; // textContent é blindado contra hackers
+    pNome.appendChild(strongNome);
+    pNome.appendChild(document.createTextNode(dadosEnviados.get('nome'))); 
+
+    
+    // 5. Cria o parágrafo do Preço
+    const pPreco = document.createElement('p');
+    const strongPreco = document.createElement('strong');
+    strongPreco.textContent = 'Valor cadastrado: ';
+    pPreco.appendChild(strongPreco);
+    pPreco.appendChild(document.createTextNode(precoFormatado));
+
+    // 6. Monta o quebra-cabeça colocando os parágrafos dentro do card, e o card na tela
+    cardSucesso.append(pMensagem, pNome, pPreco);
+    produtoOut.appendChild(cardSucesso);
 
     feedbackSection.scrollIntoView({ behavior: 'smooth' });
 }
@@ -120,4 +161,18 @@ function limparPainelPreview() {
     
     imagePreview.src = '';
     imagemPreviewBox.classList.add('oculta');
+}
+
+function mostrarErro (idInput, idSpan, mensagem) {
+    const input = document.getElementById(idInput)
+    const span = document.getElementById(idSpan)
+
+    input.classList.add('input-erro')
+    span.textContent = mensagem
+    span.style.display = 'block'
+}
+
+function limparErrosFormulario(){
+    document.querySelectorAll('.input-erro').forEach(input => input.classList.remove('input-erro'));
+    document.querySelectorAll('.mensagem-erro').forEach(span => span.style.display = 'none');
 }
