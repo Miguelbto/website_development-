@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFood — Sabor & Saber (Tailwind)</title>
+  <link rel="stylesheet" href="output.css">
+  <!--
+    LIVE CODE — DIFERENÇA DO BOOTSTRAP:
+    Não tem CDN aqui. O CSS vai ser gerado localmente pelo Tailwind.
+    Você vai criar o output.css rodando no terminal:
+      npx tailwindcss -i input.css -o output.css --watch
+    Depois linkar aqui:
+
+    <link rel="stylesheet" href="output.css">
+  -->
+
+</head>
+<body>
+
+  <!--
+    LIVE CODE — PASSO 4 (Header com Tailwind)
+    Mesma ideia do Bootstrap, classes diferentes:
+
+    Bootstrap:  bg-danger  text-white  text-center  py-4  mb-4
+    Tailwind:   bg-red-600 text-white  text-center  py-4  mb-4
+
+    Percebe que text-white, text-center, py-4, mb-4 são IGUAIS!
+    Só o bg muda: bg-danger (nome semântico) → bg-red-600 (nome descritivo)
+  -->
+  <header class="bg-red-600 text-white text-center py-4 mb-4">
+    <h1>Sabor &amp; Saber</h1>
+    <p>Cardápio digital</p>
+  </header>
+
+  <!--
+    LIVE CODE — PASSO 5 (Container e Grid com Tailwind)
+    Bootstrap:  <main class="container">
+    Tailwind:   <main class="max-w-6xl mx-auto px-4">
+
+    Bootstrap tem uma classe "container" pronta.
+    Tailwind não tem — você descreve o que quer:
+      max-w-6xl = largura máxima
+      mx-auto   = centraliza horizontalmente
+      px-4      = padding lateral
+
+    Grid:
+    Bootstrap:  <div class="row g-3"> + col-12 col-md-6 col-lg-4
+    Tailwind:   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    No Tailwind o grid vai direto na section, sem div row.
+  -->
+  <main>
+    <h2>Nosso Cardápio</h2>
+
+    <section id="cardapio">
+    </section>
+  </main>
+
+  <footer>
+    <small>TechFood · Aula 1 Tailwind · Prof. Marlon</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

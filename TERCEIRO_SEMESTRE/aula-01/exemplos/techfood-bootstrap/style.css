@@ -1,0 +1,41 @@
+/* ============================================================
+   TechFood — style.css (Bootstrap)
+
+   Regra da aula: este arquivo deve ficar com o MÍNIMO possível.
+   Tudo que o Bootstrap cobre, não colocamos aqui.
+   Se uma classe Bootstrap já resolve, usamos ela no HTML.
+
+   O que FICA aqui:
+   - Fonte personalizada (Bootstrap usa system-ui por padrão)
+   - Efeito de hover no card (Bootstrap não faz hover de lift)
+   - Cor de categoria (marrom do restaurante — não é uma cor do Bootstrap)
+   ============================================================ */
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Hover: o card "levanta" levemente ao passar o mouse.
+   transition suaviza a animação. */
+.card-prato {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card-prato:hover {
+  transform: translateY(-4px);
+}
+
+/* Cor personalizada da categoria — marrom quente do restaurante.
+   Bootstrap tem text-warning (amarelo) mas não este marrom específico. */
+.categoria {
+  color: #8B4513;
+}
+
+/*
+  LIVE CODE — O que vira DESNECESSÁRIO depois de aplicar Bootstrap:
+  - display: grid ou flexbox do cardápio  → Bootstrap row/col resolve
+  - margin e padding dos elementos       → Bootstrap utilities (mt, mb, p) resolvem
+  - cores de fundo e texto do header     → Bootstrap bg-danger, text-white resolvem
+  - responsividade com @media            → Bootstrap breakpoints resolvem
+*/

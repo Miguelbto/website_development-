@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFood — Sabor & Saber (Bootstrap)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--
+    LIVE CODE — PASSO 1 (Bootstrap CDN)
+    Cole aqui o link do Bootstrap ANTES do style.css.
+    A ordem importa: Bootstrap primeiro, nosso CSS depois.
+    Assim podemos sobrescrever o Bootstrap quando precisar.
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    LIVE CODE — PASSO 2 (Header)
+    Adicione as classes Bootstrap no header:
+    bg-danger  text-white  text-center  py-4  mb-4
+  -->
+  <header class="bg-danger text-white text-center py-4 mb-4">
+    <h1 class="fw-bold">Sabor &amp; Saber</h1>
+    <p class="mb-4 fs-5">Cardápio digital</p>
+  </header>
+
+  <!--
+    LIVE CODE — PASSO 3 (Container e Grid)
+    Envolva o conteúdo em:
+      <main class="container">
+        <div class="row g-3">
+          ...os articles receberão col-12 col-md-6 col-lg-4...
+        </div>
+      </main>
+  -->
+  <main class="container">
+    <h2 class="text-center mb-4">Nosso Cardápio</h2>
+
+    <!--
+      O JS vai inserir os cards aqui.
+      Quando aplicar o grid, a section vira a row
+      e cada article (criado pelo JS) recebe as classes col.
+    -->
+    <section id="cardapio" class="row g-3">
+    </section>
+  </main>
+
+  <footer class="text-center text-muted py-4 mt-5">
+    <small>TechFood · Aula 1 Bootstrap · Prof. Marlon</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
