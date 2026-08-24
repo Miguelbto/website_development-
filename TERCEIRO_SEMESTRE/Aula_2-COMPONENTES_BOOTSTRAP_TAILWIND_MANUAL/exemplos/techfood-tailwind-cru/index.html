@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFood — Sabor & Saber (Tailwind)</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-50">
+
+  <!--
+    LIVE CODE — PASSO 1: NAVBAR TAILWIND
+    No Tailwind não existe navbar pronta.
+    Você constrói com flex + justify-between.
+
+    Diferença do Bootstrap:
+    Bootstrap: <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
+    Tailwind:  <nav class="bg-red-600 text-white px-6 py-4 flex justify-between items-center">
+
+    Versão com hambúrguer requer JS manual (ou biblioteca como AlpineJS).
+    Por simplicidade, vamos fazer a versão sem hambúrguer primeiro.
+  -->
+  <nav>
+    <span>Sabor &amp; Saber</span>
+    <ul>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <h2 class="text-center text-2xl font-bold mb-6">Nosso Cardápio</h2>
+
+    <!--
+      LIVE CODE — PASSO 2: GRID
+      Tailwind: grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4
+
+      No Tailwind o grid fica na section.
+      Cada article entra direto — sem col-* nos filhos.
+    -->
+    <section id="cardapio">
+    </section>
+
+    <hr class="my-8 border-gray-200">
+
+    <!--
+      LIVE CODE — PASSO 3: FORM TAILWIND
+      Input Tailwind (sem form-control):
+        class="w-full border border-gray-300 rounded-lg px-3 py-2
+               focus:outline-none focus:ring-2 focus:ring-red-500"
+
+      Label Tailwind:
+        class="block text-sm font-medium text-gray-700 mb-1"
+    -->
+    <section id="contato" class="max-w-lg mx-auto">
+      <h2 class="text-center text-2xl font-bold mb-6">Fale conosco</h2>
+      <!-- Formulário aqui -->
+    </section>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

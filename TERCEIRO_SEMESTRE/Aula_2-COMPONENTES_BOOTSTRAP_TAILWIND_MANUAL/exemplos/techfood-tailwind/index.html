@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFood — Sabor & Saber (Tailwind)</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- NAVBAR TAILWIND -->
+  <nav class="bg-red-600 text-white px-6 py-4 flex justify-between items-center">
+    <span class="font-bold text-xl">🍽️ Sabor &amp; Saber</span>
+    <ul class="flex gap-6 list-none m-0 p-0">
+      <li><a href="#cardapio" class="text-white hover:text-red-200 transition-colors">Cardápio</a></li>
+      <li><a href="#contato"  class="text-white hover:text-red-200 transition-colors">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <h2 class="text-center text-2xl font-bold mb-6">Nosso Cardápio</h2>
+
+    <section id="cardapio"
+             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    </section>
+
+    <hr class="my-8 border-gray-200">
+
+    <!-- FORMULÁRIO TAILWIND -->
+    <section id="contato" class="max-w-lg mx-auto">
+      <h2 class="text-center text-2xl font-bold mb-6">Fale conosco</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Seu nome</label>
+          <input type="text"
+                 class="w-full border border-gray-300 rounded-lg px-3 py-2
+                        focus:outline-none focus:ring-2 focus:ring-red-500"
+                 placeholder="Nome completo">
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+          <input type="email"
+                 class="w-full border border-gray-300 rounded-lg px-3 py-2
+                        focus:outline-none focus:ring-2 focus:ring-red-500"
+                 placeholder="voce@email.com">
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+          <textarea rows="4"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2
+                           focus:outline-none focus:ring-2 focus:ring-red-500"
+                    placeholder="Sua mensagem..."></textarea>
+        </div>
+        <button type="button"
+                class="w-full bg-red-600 text-white py-2 rounded-lg font-medium
+                       hover:bg-red-700 transition-colors">
+          Enviar mensagem
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- MODAL JS puro (Tailwind não tem modal pronto) -->
+  <div id="modal"
+       class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-lg w-full max-w-md mx-4">
+      <div class="bg-red-600 text-white px-6 py-4 rounded-t-xl flex justify-between items-center">
+        <h3 class="font-bold text-lg" id="modalNome"></h3>
+        <button onclick="fecharModal()" class="text-white hover:text-red-200 text-xl leading-none">&times;</button>
+      </div>
+      <div class="p-6">
+        <p class="text-gray-500 text-sm mb-1" id="modalCategoria"></p>
+        <p class="text-green-600 font-bold text-2xl mb-3" id="modalPreco"></p>
+        <p class="text-gray-700" id="modalDescricao"></p>
+      </div>
+      <div class="px-6 pb-6 flex gap-3">
+        <button onclick="fecharModal()"
+                class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg
+                       hover:bg-gray-50 transition-colors">
+          Fechar
+        </button>
+        <button class="flex-1 bg-red-600 text-white py-2 rounded-lg font-medium
+                       hover:bg-red-700 transition-colors">
+          Pedir Agora
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

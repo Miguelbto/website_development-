@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My formativa</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Restaurante do Marlon</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pedido">Faça seu pedido</a></li>
+          <li><a href="https://github.com/marlon-palata">GitHub do Marlon</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <main class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Nosso Cardápio</h2>
+    <!-- Grid responsivo — Aula 1 -->
+    <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3" id="containerPratos">
+      <!-- Cards injetados pelo script.js -->
+    </div>
+
+    <section class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h2 class="text-center fw-bold mb-4">Faça seu Pedido</h2>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Seu nome</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+
+              <label class="form-label">Prato favorito</label>
+              <select class="form-select">
+                <option>Feijoada</option>
+                <option>Moqueca</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-danger w-100">
+              Confirmar Pedido
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <div class="modal fade" id="modalPrato" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="modalNome">Nome do prato</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalCategoria" class="text-muted"></p>
+          <p id="modalPreco" class="fs-4 fw-bold text-success"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger w-100">Pedir Agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>

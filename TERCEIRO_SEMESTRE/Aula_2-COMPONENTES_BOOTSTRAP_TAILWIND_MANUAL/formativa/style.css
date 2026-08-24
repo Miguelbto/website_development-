@@ -1,0 +1,16 @@
+/* TechFood — Aula 2 Bootstrap (Componentes)
+   Regra: só o que Bootstrap não cobre entra aqui. */
+
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.card-prato {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card-prato:hover {
+  transform: translateY(-4px);
+}
