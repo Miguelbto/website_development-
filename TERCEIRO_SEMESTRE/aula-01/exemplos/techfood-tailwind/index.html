@@ -16,7 +16,7 @@
   -->
 
 </head>
-<body>
+<body class="bg-gray-100">
 
   <!--
     LIVE CODE — PASSO 4 (Header com Tailwind)
@@ -29,8 +29,8 @@
     Só o bg muda: bg-danger (nome semântico) → bg-red-600 (nome descritivo)
   -->
   <header class="bg-red-600 text-white text-center py-4 mb-4">
-    <h1>Sabor &amp; Saber</h1>
-    <p>Cardápio digital</p>
+    <h1 class="font-bold text-3xl">Sabor &amp; Saber</h1>
+    <p class="text-lg mt-1">Cardápio digital</p>
   </header>
 
   <!--
@@ -50,14 +50,14 @@
 
     No Tailwind o grid vai direto na section, sem div row.
   -->
-  <main>
-    <h2>Nosso Cardápio</h2>
+  <main class="max-w-6xl mx-auto px-4">
+    <h2 class="text-center text-2xl font-bold mb-6">Nosso Cardápio</h2>
 
-    <section id="cardapio">
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="cardapio">
     </section>
   </main>
 
-  <footer>
+  <footer class="text-center text-gray py-6 mt-8">
     <small>TechFood · Aula 1 Tailwind · Prof. Marlon</small>
   </footer>
 

@@ -1,0 +1,50 @@
+/* ============================================================
+   input.css — Arquivo de ENTRADA do Tailwind
+
+   Este arquivo não é o CSS final.
+   Ele é processado pelo Tailwind para gerar o output.css.
+
+   COMO GERAR O CSS:
+   No terminal, dentro desta pasta, rode:
+     npx tailwindcss -i input.css -o output.css --watch
+
+   O Tailwind vai varrer o index.html e o script.js,
+   pegar todas as classes que você usou,
+   e colocar só essas no output.css.
+
+   AVISO: o VS Code pode mostrar linhas laranja abaixo
+   dizendo "Unknown at rule @tailwind" — isso não é erro.
+   É o linter do VS Code não conhecendo a diretiva.
+   O build funciona normalmente mesmo com esse aviso.
+   Para silenciar: instale a extensão "Tailwind CSS IntelliSense"
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS custom que o Tailwind não cobre.
+
+   Assim como no Bootstrap, o Tailwind não faz o hover de "lift".
+   E a cor marrom do restaurante é específica demais pra usar
+   as cores padrão do Tailwind.
+   ============================================================ */
+
+@layer components {
+  .card-prato {
+    /* transition e transform ficam aqui porque Tailwind
+       prefere que efeitos de hover com animação fiquem
+       em componentes (@layer components) em vez de inline. */
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  .card-prato:hover {
+    transform: translateY(-4px);
+  }
+
+  .categoria {
+    color: #8B4513;
+  }
+}

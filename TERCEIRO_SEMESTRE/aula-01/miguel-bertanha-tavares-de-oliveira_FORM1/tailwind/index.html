@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio com Tailwind</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <header class="bg-red-600 py-6">
+      <h1 class="text-white text-center text-3xl font-bold">Hello Marlon!</h1>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 mt-6">
+      <!-- Cardápio -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        id="cardapio"
+      >
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Feijoada</h3>
+          <span class="text-sm text-gray-500 block mb-3">comida</span>
+          <div class="text-lg font-bold text-green-600">10 R$</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Coxinha</h3>
+          <span class="text-sm text-gray-500 block mb-3">Salgado</span>
+          <div class="text-lg font-bold text-green-600">10 R$</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Brigadeiro</h3>
+          <span class="text-sm text-gray-500 block mb-3">Doce</span>
+          <div class="text-lg font-bold text-green-600">10 R$</div>
+        </div>
+      </section>
+
+      <!-- Comentários em 2 Colunas -->
+      <section id="comentario" class="mt-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Comentário</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <p class="font-bold text-gray-800 mb-2">Classes que mudaram foram:</p>
+            <p class="text-gray-600">bg-danger ➔ bg-red-600</p>
+            <p class="text-gray-600">rounded-3 ➔ rounded-lg</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <p class="font-bold text-gray-800 mb-2">Classes que permaneceram iguais:</p>
+            <p class="text-gray-600">text-white === text-white</p>
+            <p class="text-gray-600">p-4 === p-4</p>
+            <p class="text-gray-600">shadow-sm === shadow-sm</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

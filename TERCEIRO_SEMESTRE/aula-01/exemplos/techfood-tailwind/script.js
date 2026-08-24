@@ -35,7 +35,7 @@ const containerCardapio = document.querySelector("#cardapio");
 // 2. Nome alinhado com a chamada (criarCardPrato)
 function criarCardPrato(prato) {
   const card = document.createElement("div");
-  card.className = "card";
+  card.className = "card-prato p-4 bg-white rounded-xl shadow-sm h-";
 
   card.innerHTML = `
     <h3>${prato.nome}</h3>
