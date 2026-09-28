@@ -1,0 +1,31 @@
+/* ==================================================
+   input.css — arquivo de ENTRADA do Tailwind
+   
+   Este arquivo não é o CSS final. Ele é processado
+   pelo Tailwind para gerar o output.css.
+   
+   Para rodar:
+     npx tailwindcss -i input.css -o output.css --watch
+   
+   O Tailwind vai varrer os HTMLs e JSs configurados
+   e incluir no output.css SOMENTE as classes usadas.
+   ================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos custom que o Tailwind não cobre.
+   Geralmente ficam aqui em @layer components. */
+
+@layer components {
+  /* Hover no card — Tailwind tem hover: como prefixo,
+     mas transition precisa ser declarado em CSS puro */
+  .card-prato {
+    @apply transition-transform duration-200;
+  }
+  
+  .card-prato:hover {
+    @apply -translate-y-1;
+  }
+}

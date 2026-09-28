@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabarito — Exercícios Aula 1 Bootstrap</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body class="bg-light">
+
+  <!-- Cabeçalho -->
+  <header class="bg-dark text-white text-center py-4 mb-4">
+    <h1 class="fw-bold mb-0">Gabarito · Bootstrap na Prática</h1>
+    <p class="text-muted mb-0"><small>5 exercícios do Sabor & Saber</small></p>
+  </header>
+
+  <main class="container mb-5">
+
+    <!-- ================================================
+         Ex 1 — Duas metades
+         ================================================ -->
+    <section class="mb-5">
+      <h2 class="border-bottom pb-2 mb-3">1️⃣ Duas metades</h2>
+      <p class="text-muted">Contexto: começando a usar Bootstrap no Sabor & Saber.</p>
+
+      <div class="row">
+        <section class="col-6 bg-primary text-white text-center py-4">
+          <h3 class="fw-bold mb-0">Metade esquerda</h3>
+        </section>
+        <section class="col-6 bg-danger text-white text-center py-4">
+          <h3 class="fw-bold mb-0">Metade direita</h3>
+        </section>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         Ex 2 — 3 cards responsivos
+         ================================================ -->
+    <section class="mb-5">
+      <h2 class="border-bottom pb-2 mb-3">2️⃣ 3 cards responsivos</h2>
+      <p class="text-muted">Mobile: 1 por linha · Tablet: 2 por linha · Desktop: 3 por linha.</p>
+
+      <div class="row g-3">
+        <article class="col-12 col-md-6 col-lg-4 bg-light p-3 border rounded">
+          <h4 class="fw-bold">Feijoada</h4>
+          <p class="text-muted mb-0">Prato principal · R$ 42,90</p>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 bg-light p-3 border rounded">
+          <h4 class="fw-bold">Coxinha</h4>
+          <p class="text-muted mb-0">Petisco · R$ 8,50</p>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 bg-light p-3 border rounded">
+          <h4 class="fw-bold">Brigadeiro</h4>
+          <p class="text-muted mb-0">Sobremesa · R$ 6,00</p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         Ex 3 — Sabor & Saber com espaços
+         ================================================ -->
+    <section class="mb-5">
+      <h2 class="border-bottom pb-2 mb-3">3️⃣ Sabor & Saber com espaços</h2>
+      <p class="text-muted">Formulário de contato com utilities de spacing (nenhum CSS custom).</p>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <form class="py-4 bg-white p-4 rounded shadow-sm mx-auto">
+            <h3 class="mt-5 text-center fw-bold">Fale conosco</h3>
+
+            <div class="mb-3">
+              <label class="form-label">Seu nome</label>
+              <input type="text" class="form-control" placeholder="Nome completo">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" placeholder="voce@email.com">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Mensagem</label>
+              <textarea class="form-control" rows="4" placeholder="Sua mensagem..."></textarea>
+            </div>
+
+            <button type="button" class="btn btn-danger w-100">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         Ex 4 — Cartão promocional
+         ================================================ -->
+    <section class="mb-5">
+      <h2 class="border-bottom pb-2 mb-3">4️⃣ Cartão promocional</h2>
+      <p class="text-muted">Card de "Promoção do dia" combinando 3 categorias de utilities.</p>
+
+      <article class="bg-warning p-4 mb-3 rounded-3 shadow-sm">
+        <h3 class="fs-2 fw-bold text-center">🎉 Promoção do dia</h3>
+        <p class="text-muted text-center">Feijoada + refrigerante 350ml + brigadeiro</p>
+        <p class="fs-1 fw-bold text-center text-dark mb-3">R$ 39,90</p>
+        <div class="text-center">
+          <button type="button" class="btn bg-danger text-white btn-lg px-5">Quero!</button>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- ================================================
+         Ex 5 — Página do restaurante (desafio)
+         ================================================ -->
+    <section class="mb-5">
+      <h2 class="border-bottom pb-2 mb-3">5️⃣ Página do restaurante (desafio)</h2>
+      <p class="text-muted">Página completa do Sabor & Saber — só utilities e grid.</p>
+
+      <!-- Mini-página -->
+      <div class="border rounded-3 overflow-hidden">
+
+        <header class="bg-danger text-white text-center py-4">
+          <h1 class="fw-bold mb-1">Sabor & Saber</h1>
+          <p class="mb-0">Sabor de casa. Preço justo.</p>
+        </header>
+
+        <section class="container py-4">
+          <h2 class="text-center mb-4">Cardápio</h2>
+
+          <div class="row g-3">
+            <article class="col-12 col-md-6 col-lg-4 bg-white p-4 rounded-3 text-center">
+              <h4 class="fw-bold">Feijoada</h4>
+              <p class="text-muted">Prato Principal</p>
+              <p class="fs-4 fw-bold text-success mb-0">R$ 42,90</p>
+            </article>
+            <article class="col-12 col-md-6 col-lg-4 bg-white p-4 rounded-3 text-center">
+              <h4 class="fw-bold">Coxinha</h4>
+              <p class="text-muted">Petisco</p>
+              <p class="fs-4 fw-bold text-success mb-0">R$ 8,50</p>
+            </article>
+            <article class="col-12 col-md-6 col-lg-4 bg-white p-4 rounded-3 text-center">
+              <h4 class="fw-bold">Brigadeiro</h4>
+              <p class="text-muted">Sobremesa</p>
+              <p class="fs-4 fw-bold text-success mb-0">R$ 6,00</p>
+            </article>
+          </div>
+        </section>
+
+        <footer class="bg-dark text-white text-center py-3">
+          <small>Feito com Bootstrap 5 · Sabor & Saber</small>
+        </footer>
+
+      </div>
+
+      <p class="text-muted mt-3">
+        <small>💡 Redimensione a janela do navegador ou use o DevTools (F12 → ícone celular) 
+        para testar em mobile, tablet e desktop.</small>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="text-center text-muted py-4 bg-white">
+    <small>Gabarito · Aula 1 (Bootstrap) · Prof. Marlon · Turma 2B</small>
+  </footer>
+
+</body>
+</html>

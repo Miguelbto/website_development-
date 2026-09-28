@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3 — Modal Bootstrap (Desafio)</title>
+
+  <!--
+    EXERCÍCIO 3 — Aula 2 (Desafio: Modal)
+    ─────────────────────────────────────────────────────────────
+    Partindo dos cards do Exercício 1:
+    Trocar o botão "Pedir Agora" por um que abre um Modal
+    com os detalhes do prato.
+
+    O que fazer:
+    1. Adicionar o atributo data-bs-toggle="modal" no botão do card
+    2. Adicionar data-bs-target="#modalPrato" no botão
+    3. Adicionar atributos data-* com nome, categoria e preço
+    4. Criar o Modal antes do </body>
+    5. Conectar os dados ao modal via JavaScript
+
+    Estrutura do botão no card:
+    <button class="btn btn-danger w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#modalPrato"
+            data-nome="Feijoada Completa"
+            data-categoria="Prato Principal"
+            data-preco="R$ 42,90">
+      Ver detalhes
+    </button>
+
+    Estrutura do Modal:
+    <div class="modal fade" id="modalPrato" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="modalNome"></h5>
+            <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-muted" id="modalCategoria"></p>
+            <p class="fs-4 fw-bold text-success" id="modalPreco"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    JavaScript para popular o modal:
+    document.addEventListener('show.bs.modal', (event) => {
+      const btn = event.relatedTarget;
+      document.getElementById('modalNome').textContent     = btn.getAttribute('data-nome');
+      document.getElementById('modalCategoria').textContent = btn.getAttribute('data-categoria');
+      document.getElementById('modalPreco').textContent    = btn.getAttribute('data-preco');
+    });
+
+    ⚠️ Lembre: sem o JS bundle o modal não abre!
+    ─────────────────────────────────────────────────────────────
+  -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar aqui (copie do Ex 1) -->
+
+  <main class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Nosso Cardápio</h2>
+    <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+      <!-- Cards aqui com botões conectados ao modal -->
+
+    </div>
+  </main>
+
+  <!-- Modal aqui -->
+
+  <!-- JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Conectar dados ao modal aqui
+  </script>
+
+</body>
+</html>

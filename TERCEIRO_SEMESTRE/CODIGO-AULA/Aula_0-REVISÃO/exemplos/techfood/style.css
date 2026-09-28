@@ -1,0 +1,88 @@
+/* ============================================
+   Sabor & Saber — Kickoff
+   O CSS aqui é PROPOSITALMENTE simples, custom.
+   No próximo bloco vamos substituir tudo isso por Bootstrap.
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #FFF8F0;   /* creme quente — remete a comida */
+  color: #2B2B2B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topo {
+  background: #C1272D;   /* vermelho comida — identidade Sabor & Saber */
+  color: #fff;
+  padding: 24px;
+  text-align: center;
+}
+
+.topo h1 { font-size: 2rem; margin-bottom: 4px; }
+.topo p  { opacity: 0.9; font-size: 0.95rem; }
+
+main {
+  flex: 1;
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Grid manual — repare como isso ficará TRIVIAL no Bootstrap depois */
+.cardapio {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  color: #C1272D;
+  margin-bottom: 8px;
+}
+
+.card .categoria {
+  display: inline-block;
+  background: #FFE4B5;
+  color: #8B4513;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
+
+.card .preco {
+  font-weight: bold;
+  color: #1a7a3a;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #888;
+  font-size: 0.8rem;
+}

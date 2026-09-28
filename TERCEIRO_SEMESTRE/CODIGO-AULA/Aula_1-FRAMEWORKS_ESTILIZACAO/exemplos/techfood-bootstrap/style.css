@@ -1,0 +1,29 @@
+/* ==================================================
+   Sabor & Saber — CSS custom mínimo
+   Depois de aplicar Bootstrap, restou pouquíssimo CSS.
+   Só coisas MUITO específicas que Bootstrap não cobre.
+   ================================================== */
+
+/* Fonte customizada — Bootstrap usa system-ui como padrão.
+   Se você quiser uma fonte específica pro seu restaurante,
+   define aqui. É a única coisa que Bootstrap não determina. */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Detalhe visual do card no hover — Bootstrap não faz isso
+   automaticamente porque cada projeto tem sua própria intenção. */
+.card-prato {
+  transition: transform 0.2s ease;
+}
+
+.card-prato:hover {
+  transform: translateY(-4px);
+}
+
+/* Categoria com cor customizada (marrom quente) — cor de identidade
+   do restaurante. Bootstrap tem text-warning mas queremos um marrom
+   específico. Uma linha de CSS custom vale a pena aqui. */
+.categoria {
+  color: #8B4513;
+}

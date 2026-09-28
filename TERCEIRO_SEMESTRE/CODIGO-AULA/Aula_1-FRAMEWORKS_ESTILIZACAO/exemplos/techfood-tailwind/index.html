@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor & Saber — Tailwind</title>
+
+  <!--
+    Tailwind via npm — gerado pelo processo:
+      1. npm install -D tailwindcss
+      2. npx tailwindcss init
+      3. npx tailwindcss -i input.css -o output.css --watch
+    O arquivo output.css é gerado localmente.
+    
+    NOTA: Em vez de CDN do Bootstrap, agora usamos
+    um arquivo CSS GERADO pelo Tailwind localmente.
+    Só o CSS das classes que você realmente usou entra no output.css.
+  -->
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-100">
+
+  <!--
+    COMPARATIVO BOOTSTRAP × TAILWIND:
+    
+    Bootstrap:  class="bg-danger text-white text-center py-4 mb-4"
+    Tailwind:   class="bg-red-600 text-white text-center py-4 mb-4"
+    
+    Mesmas ideias, nomes diferentes.
+    text-center, py-4, mb-4 são iguais nos dois!
+  -->
+  <header class="bg-red-600 text-white text-center py-4 mb-4">
+    <h1 class="font-bold text-3xl">Sabor & Saber</h1>
+    <p class="text-lg mt-1">Sabor de casa. Preço justo.</p>
+  </header>
+
+  <!--
+    Bootstrap:  class="container"
+    Tailwind:   class="max-w-6xl mx-auto px-4"
+    
+    Tailwind não tem "container" mágico — você descreve o que quer:
+    largura máxima + centralizado + padding lateral.
+  -->
+  <main class="max-w-6xl mx-auto px-4">
+
+    <h2 class="text-center text-2xl font-bold mb-6">Nosso Cardápio</h2>
+
+    <!--
+      Bootstrap:  class="row g-3"  (grid + gap)
+      Tailwind:   class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+      
+      Tailwind é mais explícito: você declara o grid diretamente.
+      md: e lg: são os breakpoints (equivalentes ao md e lg do Bootstrap).
+    -->
+    <section id="cardapio" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Cards renderizados dinamicamente via script.js -->
+    </section>
+
+  </main>
+
+  <footer class="text-center text-gray-400 py-6 mt-8">
+    <small>Feito com HTML + JS + Tailwind CSS · Sabor & Saber</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

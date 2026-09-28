@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #F0F8FF;
+  color: #2B2B2B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topo {
+  background: #1E5AA8;
+  color: #fff;
+  padding: 24px;
+  text-align: center;
+}
+
+.topo h1 { font-size: 1.8rem; margin-bottom: 4px; }
+.topo p  { opacity: 0.9; font-size: 0.9rem; }
+
+main {
+  flex: 1;
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.filtro-wrap {
+  margin-bottom: 20px;
+}
+
+#filtro {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #1E5AA8;
+  border-radius: 8px;
+  outline: none;
+}
+
+#filtro:focus {
+  border-color: #0A3D7A;
+  box-shadow: 0 0 0 3px rgba(30, 90, 168, 0.15);
+}
+
+.lista-bebidas {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  color: #1E5AA8;
+  margin-bottom: 6px;
+}
+
+.card .info {
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #888;
+  font-size: 0.8rem;
+}

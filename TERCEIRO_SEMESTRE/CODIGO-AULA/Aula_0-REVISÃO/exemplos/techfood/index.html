@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título fala o que é o projeto: um refresh do TechFood focado em OO+DOM -->
+  <title>TechFood Mini — Refresh OO + DOM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Sabor &amp; Saber</h1>
+    <p>Cardápio digital — kickoff do 2º semestre</p>
+  </header>
+
+  <main>
+    <!-- Container onde vamos renderizar os cards DINAMICAMENTE via JS.
+         A ideia central da aula: o HTML aqui é vazio; quem constrói é o script.js.
+         Isso é o oposto do que faremos em React (declarativo). -->
+    <section id="cardapio" class="cardapio">
+      <!-- Cards serão inseridos aqui pelo script.js -->
+    </section>
+  </main>
+
+  <footer>
+    <small>Live code — Kickoff · Prof. Marlon · Turma 2B</small>
+  </footer>
+
+  <!-- defer garante que o DOM já foi montado quando o script rodar.
+       Alternativa: colocar o <script> no final do <body>. Ambos funcionam. -->
+  <script src="script.js" defer></script>
+</body>
+</html>
