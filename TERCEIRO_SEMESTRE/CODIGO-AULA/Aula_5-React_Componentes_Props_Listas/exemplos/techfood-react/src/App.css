@@ -1,0 +1,174 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+.header p {
+  color: #777;
+  margin: 4px 0 0;
+}
+.header .carrinho {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 700;
+}
+
+.cardapio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card-prato {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card-prato .categoria {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e4002b;
+  font-weight: 700;
+}
+.card-prato h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+.card-prato .preco {
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+.card-prato .descricao {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Seletor de quantidade  −  1  + */
+.quantidade {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.quantidade button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.quantidade span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.btn-adicionar,
+.btn-secundario {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-adicionar {
+  background: #e4002b;
+  color: #fff;
+}
+.btn-adicionar:hover {
+  background: #b80023;
+}
+.btn-secundario {
+  background: #f1f1f4;
+  color: #333;
+}
+
+.rodape {
+  text-align: center;
+  margin-top: 40px;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* ---------- Aula 5: seções, selos e condicionais ---------- */
+.secao {
+  margin-bottom: 32px;
+}
+.secao h2 {
+  font-size: 1.3rem;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e4002b;
+}
+.card-prato h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+.card-prato.destaque {
+  border: 2px solid #e4002b;
+}
+.selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 22px;
+}
+.selo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #f1f1f4;
+  color: #333;
+}
+.selo-destaque {
+  background: #e4002b;
+  color: #fff;
+}
+.selo-veg {
+  background: #e9f5ec;
+  color: #1b5e20;
+}
+.selo-esgotado {
+  background: #1a1a1a;
+  color: #fff;
+}
+.btn-indisponivel {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 700;
+  background: #ddd;
+  color: #777;
+  cursor: not-allowed;
+}
+.vazio {
+  color: #888;
+}
+.preco-antigo {
+  color: #999;
+  font-weight: 400;
+  margin-right: 6px;
+}
