@@ -6,7 +6,9 @@ export const cardapio = [
         price: 42.90,
         description: "Feijoada muito recheada com bastante carne e tempero",
         category: "Prato principal",
-        vegetariano: false
+        vegetariano: false,
+        destaque: true,
+        disponivel: true,
     },
 
     {
@@ -15,6 +17,9 @@ export const cardapio = [
         price: 49.90,
         description: "Moqueca muito recheada com bastante carne e tempero",
         category: "Prato principal",
+        vegetariano: false,
+        destaque: false,
+        disponivel: false,
     },
 
     {
@@ -23,6 +28,9 @@ export const cardapio = [
         price: "15.00",
         description: "Brownie muito chocolatudo com bastante sabor e sorvete",
         category: "Sobremesa",
+        vegetariano: true,
+        destaque: false,
+        disponivel: true,
     },
     {
         id: 4,
@@ -30,5 +38,18 @@ export const cardapio = [
         price: "10.00",
         description: "Suco de laranja extremamente fresca",
         category: "Suco",
+        vegetariano: true,
+        destaque: false,
+        disponivel: true,
+    },
+    {
+        id: 5,
+        name: "Brigadeiro",
+        price: "8.00",
+        description: "Brigadeiro super delicioso chocolatudo",
+        category: "Suco",
+        vegetariano: true,
+        destaque: true,
+        disponivel: true,
     },
 ]
