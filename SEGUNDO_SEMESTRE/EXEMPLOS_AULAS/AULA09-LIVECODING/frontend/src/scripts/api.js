@@ -28,7 +28,7 @@
 //   Solução: adicionar app.use(cors()) no app.js do back-end (já configurado).
 //   O front-end não tem como resolver CORS — ele apenas faz a requisição.
 // ─────────────────────────────────────────────────────────────────────────────
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://api-techfood.onrender.com";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // buscarProdutos()
